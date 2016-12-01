@@ -1,11 +1,13 @@
+#include <Encoder.h>
 #include <Adafruit_NeoPixel.h>
+
 
   //INPUTS
   int laserSelect = A0;
   int acToolSelect = A1;
   int dcToolSelect = A2;
-  int up = A3;
-  int down = A4;
+  int rotaryA = 2;
+  int rotaryB = 3;
   int enter = 15;
   // STATIC OUTPUTS
   int laserRelay = 13;
@@ -37,8 +39,8 @@ void setup() {
   pinMode(laserSelect, INPUT_PULLUP);
   pinMode(acToolSelect, INPUT_PULLUP);
   pinMode(dcToolSelect, INPUT_PULLUP);
-  pinMode(up, INPUT_PULLUP);
-  pinMode(down, INPUT_PULLUP);
+  pinMode(rotaryA, INPUT_PULLUP);
+  pinMode(rotaryB, INPUT_PULLUP);
   pinMode(enter, INPUT_PULLUP);
   pinMode(laserRelay, OUTPUT);
   pinMode(cncRelay, OUTPUT);
@@ -47,6 +49,7 @@ void setup() {
   
   Serial.println("Time to make!");
   Serial.println("Ready for select...");
+  fadeToWhite();
 
 }
 
